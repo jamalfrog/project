@@ -12,30 +12,28 @@ print('столбец 1:', M[:, 1])
 print('элемент:', M[2, 3])
 print('трансп:', M.T.shape)
 
-print("\nШаг 3. axis")
-print('mean axis=0:', M.mean(axis=0))  # 4 числа
-print('mean axis=1:', M.mean(axis=1))  # 3 числа
+print("\n axis")
+print('mean axis=0:', M.mean(axis=0))  
+print('mean axis=1:', M.mean(axis=1))  
 
 print("\nматричное умножение")
-A = np.array([[1, 2, 3], [4, 5, 6]])   # (2, 3)
-w = np.array([[1], [0], [-1]])          # (3, 1)
-print('A @ w =', A @ w)                 # (2, 1)
+A = np.array([[1, 2, 3], [4, 5, 6]])   
+w = np.array([[1], [0], [-1]])          
+print('A @ w =', A @ w)                 
 print('broadcasting:', A + np.array([10, 20, 30]))
 
 
 print("\nлинейная модель для 100 объектов")
 rng = np.random.default_rng(0)
-X = rng.normal(size=(100, 5))           # (100, 5)
-w = np.array([0.5, -1.0, 2.0, 0.0, 1.5])  # (5,)
+X = rng.normal(size=(100, 5))           
+w = np.array([0.5, -1.0, 2.0, 0.0, 1.5])  
 b = 0.3
 y = X @ w + b
 print('X.shape, w.shape, y.shape:', X.shape, w.shape, y.shape)
 print('первые 5 предсказаний:', y[:5])
 
 print("титаник через нампай")
-# Предположим, у вас есть столбец возрастов age из задачи 2:
-age = np.array([22, 38, 26, 35, 35, np.nan, 54, 2, 27, 14])  # пример
-# В реальном коде используйте np.array(cols['age']) и обработайте NaN
+age = np.array([22, 38, 26, 35, 35, np.nan, 54, 2, 27, 14])  
 print('возраст mean/min/max:', np.nanmean(age), np.nanmin(age), np.nanmax(age))
 
 X2 = rng.normal(size=(1000, 8))
